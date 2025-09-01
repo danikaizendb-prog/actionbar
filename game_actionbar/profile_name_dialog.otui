@@ -1,0 +1,47 @@
+Window
+  id: profileNameDialog
+  text: "Nombre de perfil"
+  size: 300 110
+  anchors.center: parent.center
+  modal: true
+  focusable: true
+  visible: true
+  Label
+    id: titleLabel
+    text: "Nombre del perfil:"
+    anchors.left: parent.left
+    anchors.top: parent.top
+    margin-left: 8
+    margin-top: 8
+    font: verdana-11px-rounded
+  TextEdit
+    id: nameEdit
+    anchors.left: parent.left
+    anchors.top: titleLabel.bottom
+    anchors.right: parent.right
+    margin-left: 8
+    margin-right: 8
+    margin-top: 6
+    size: 284 24
+    text: ""
+    focusable: true
+  Button
+    id: okButton
+    text: OK
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-right: 8
+    margin-bottom: 8
+    size: 60 22
+    @onClick: |
+      modules.game_actionbar.profileNameDialogAccept()
+  Button
+    id: cancelButton
+    text: Cancel
+    anchors.right: okButton.left
+    anchors.bottom: parent.bottom
+    margin-right: 8
+    margin-bottom: 8
+    size: 60 22
+    @onClick: |
+      modules.game_actionbar.closeProfileNameDialog()
